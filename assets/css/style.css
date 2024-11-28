@@ -1970,6 +1970,7 @@ p {
 ===========================*/
 .services-area {
   padding-top: 120px;
+  padding: 20px;
   padding-bottom: 120px;
   position: relative; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
