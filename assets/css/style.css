@@ -1994,17 +1994,17 @@ p {
   position: relative;
 }
 
-
+/* Right-align Milwaukee title on all screens */
 .section-title.text-center {
-  text-align: left !important;
+  text-align: right !important;
 }
 
 .col-lg-6:last-child .section-title .title {
-  text-align: left !important;
   font-weight: 800;
   color: #222;
   font-size: 3rem;
   line-height: 1.1;
+  text-align: right !important;
 }
 
 .services-content .services-icon i {
@@ -2125,7 +2125,7 @@ p {
   transform: translateY(-5px);
 }
 
-/* Details stats styling with better spacing */
+/* Details stats styling with better spacing and borders */
 .stats-details {
   display: flex;
   justify-content: space-between;
@@ -2133,16 +2133,20 @@ p {
   flex-wrap: nowrap;
   padding: 0;
   margin-top: 25px;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
 .stats-details .col {
+  flex: 1;
+  text-align: center;
   padding: 15px 5px;
   position: relative;
-  text-align: center;
-  flex: 1;
-  min-width: 0; /* Prevents flex items from overflowing */
-  padding-left: 2px;
-  padding-right: 2px;
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.stats-details .col:last-child {
+  border-right: none;
 }
 
 .stats-label {
@@ -2165,6 +2169,7 @@ p {
   color: #37C10E;
   white-space: nowrap;
   overflow: visible;
+  padding: 0 2px;
 }
 
 .stats-title {
@@ -2317,14 +2322,19 @@ p {
   }
 }
 
-/* Medium screen adjustments */
+/* Medium screen adjustments - KEEP TITLE RIGHT-ALIGNED */
 @media (max-width: 991px) {
   .milwaukee-stats {
     margin-top: 40px;
   }
   
+  /* Keep the title right-aligned even on mobile */
   .col-lg-6 .section-title.text-center {
-    text-align: center !important;
+    text-align: right !important;
+  }
+  
+  .col-lg-6:last-child .section-title .title {
+    text-align: right !important;
   }
 }
 
@@ -2338,10 +2348,22 @@ p {
     flex: 0 0 33.333%;
     max-width: 33.333%;
     margin-bottom: 15px;
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
   }
   
-  .stats-details .col:nth-child(3n)::after {
-    display: none;
+  .stats-details .col:nth-last-child(-n+3) {
+    border-bottom: none;
+  }
+  
+  /* Make sure 3rd column has a right border */
+  .stats-details .col:nth-child(3n) {
+    border-right: none;
+  }
+  
+  .stats-details .col:nth-child(3n+1),
+  .stats-details .col:nth-child(3n+2) {
+    border-right: 1px solid rgba(0,0,0,0.1);
   }
 }
 
@@ -2356,10 +2378,17 @@ p {
     max-width: 50%;
     padding: 10px 5px;
     margin-bottom: 15px;
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
   }
   
-  .stats-details .col:nth-child(even)::after {
-    display: none;
+  .stats-details .col:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+  
+  /* Make sure odd columns have a right border */
+  .stats-details .col:nth-child(odd) {
+    border-right: 1px solid rgba(0,0,0,0.1);
   }
   
   .big-number {
@@ -2369,16 +2398,13 @@ p {
   .stats-main .col-md-6 {
     margin-bottom: 20px;
   }
-}
-
-.stats-details .col:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: 20%;
-  right: 0;
-  height: 60%;
-  width: 1px;
-  background-color: rgba(0,0,0,0.1);
+  
+  /* Override any other alignment for mobile - KEEP RIGHT ALIGNED */
+  .section-title.text-center,
+  .col-lg-6:last-child .section-title .title,
+  .col-lg-6 .section-title.text-center {
+    text-align: right !important;
+  }
 }
 
 /* Fix for dollar signs and number alignment */
