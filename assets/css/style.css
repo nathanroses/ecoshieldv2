@@ -1984,6 +1984,26 @@ p {
   }
 }
 
+/* Title section adjustments */
+.section-title .title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.section-title.text-center {
+  text-align: right !important;
+}
+
+.col-lg-6:last-child .section-title .title {
+  font-weight: 800;
+  color: #222;
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
 .services-content .services-icon i {
   font-size: 54px;
   color: #37C10E;
@@ -2052,6 +2072,60 @@ p {
   z-index: 0;
 }
 
+/* Main stats styling */
+.stats-main {
+  margin-bottom: 30px !important;
+}
+
+.stats-main h5 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.big-number {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #37C10E;
+  line-height: 1.1;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.big-number:hover {
+  transform: translateY(-5px);
+}
+
+/* Details stats styling with better spacing */
+.stats-details {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -8px 0 -8px;
+  flex-wrap: nowrap;
+}
+
+.stats-details .col {
+  padding: 15px 8px;
+  position: relative;
+}
+
+.stats-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #555;
+  letter-spacing: 0.5px;
+}
+
+.stats-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #37C10E;
+}
+
 .stats-title {
   font-size: 3.2rem;
   font-weight: 800;
@@ -2071,132 +2145,6 @@ p {
   height: 4px;
   background-color: #37C10E;
   border-radius: 2px;
-}
-
-.stats-number {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #37C10E;
-  margin-top: 15px;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.stats-number:hover {
-  transform: translateY(-5px);
-}
-
-.stats-details {
-  margin-top: 10px;
-  padding: 20px;
-  background-color: rgba(255,255,255,0.7);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-  transition: all 0.3s ease;
-}
-
-.stats-details:hover {
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-  transform: translateY(-3px);
-}
-
-.stats-details h6 {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #333;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.stats-details p {
-  font-weight: 700;
-  font-size: 1.4rem;
-  color: #222;
-  margin-bottom: 0;
-}
-
-.stats-charts img {
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.4s ease;
-}
-
-.stats-charts:hover img {
-  transform: scale(1.02);
-}
-
-/* Adjust existing services-image styling for our new layout */
-.services-image {
-  position: relative;
-  width: 100%;
-  height: auto;
-  top: auto;
-  right: auto;
-  transition: all 0.5s ease;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-}
-
-.services-image .image {
-  max-width: 100%;
-  width: 100%;
-}
-
-.services-image .image img {
-  width: 100%;
-  transition: transform 0.5s ease;
-}
-
-.services-image:hover .image img {
-  transform: scale(1.05);
-}
-
-@media (min-width: 992px) {
-  .services-content .services-content .services-title,
-  .services-content .services-content .text {
-    text-align: left;
-  }
-  
-  .milwaukee-stats {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .stats-title {
-    flex: 0 0 100%;
-    margin-bottom: 40px;
-    font-size: 3.5rem;
-  }
-  
-  .stats-number-container {
-    flex: 0 0 48%;
-    margin-bottom: 25px;
-  }
-}
-
-/* Added styling for the Milwaukee section */
-.milwaukee-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 30px;
-}
-
-.milwaukee-header .made-for {
-  flex: 0 0 40%;
-}
-
-.milwaukee-header .stats-title {
-  flex: 0 0 55%;
-  text-align: right;
-  color: #222;
-  font-size: 3rem;
-  font-weight: 900;
-  position: relative;
 }
 
 .stats-highlight {
@@ -2246,6 +2194,161 @@ p {
 
 .delay-4 {
   animation-delay: 0.4s;
+}
+
+/* Adjust existing services-image styling for our new layout */
+.services-image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  top: auto;
+  right: auto;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.services-image .image {
+  max-width: 100%;
+  width: 100%;
+}
+
+.services-image .image img {
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.services-image:hover .image img {
+  transform: scale(1.05);
+}
+
+/* Added styling for the Milwaukee section */
+.milwaukee-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.milwaukee-header .made-for {
+  flex: 0 0 40%;
+}
+
+.milwaukee-header .stats-title {
+  flex: 0 0 55%;
+  text-align: right;
+  color: #222;
+  font-size: 3rem;
+  font-weight: 900;
+  position: relative;
+}
+
+/* Fix the spacing in the statistics details section */
+@media (min-width: 992px) {
+  .services-content .services-content .services-title,
+  .services-content .services-content .text {
+    text-align: left;
+  }
+  
+  /* Add some space between the sections */
+  .row .col-lg-6:first-child {
+    padding-right: 30px;
+  }
+  
+  .row .col-lg-6:last-child {
+    padding-left: 30px;
+  }
+  
+  .milwaukee-stats {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .stats-title {
+    flex: 0 0 100%;
+    margin-bottom: 40px;
+    font-size: 3.5rem;
+  }
+  
+  .stats-number-container {
+    flex: 0 0 48%;
+    margin-bottom: 25px;
+  }
+  
+  /* Make the stats details more balanced */
+  .stats-details .col {
+    text-align: center;
+    flex: 1;
+  }
+}
+
+/* Medium screen adjustments */
+@media (max-width: 991px) {
+  .milwaukee-stats {
+    margin-top: 40px;
+  }
+  
+  .col-lg-6 .section-title.text-center {
+    text-align: center !important;
+  }
+}
+
+/* Better spacing for stats on tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+  .stats-details {
+    flex-wrap: wrap;
+  }
+  
+  .stats-details .col {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    margin-bottom: 15px;
+  }
+}
+
+/* Better spacing for mobile */
+@media (max-width: 767px) {
+  .stats-details {
+    flex-wrap: wrap;
+  }
+  
+  .stats-details .col {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 15px;
+  }
+  
+  .big-number {
+    font-size: 2.2rem;
+  }
+  
+  .stats-main .col-md-6 {
+    margin-bottom: 20px;
+  }
+}
+
+/* Fix the crowding in the stats-details section */
+.stats-details {
+  margin-top: 25px;
+}
+
+.stats-details .col:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: 0;
+  height: 60%;
+  width: 1px;
+  background-color: rgba(0,0,0,0.1);
+}
+
+@media (max-width: 767px) {
+  .stats-details .col:nth-child(odd)::after {
+    display: none;
+  }
 }
 /*===========================
       4.PRICING css 
