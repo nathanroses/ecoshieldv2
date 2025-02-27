@@ -2357,12 +2357,25 @@ p {
       background-color: #37C10E; }
 
 /*===========================
-       25.CLIENT css 
+       25.CLIENT LOGO css 
 ===========================*/
 .client-logo-area {
   background-color: #f4f6f7;
   padding-top: 80px;
   padding-bottom: 80px; }
+
+.uniform-logo {
+    max-height: 80px; 
+    width: auto;
+    object-fit: contain;
+}
+
+.single-client {
+    height: 120px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /*===========================
     6.CALL TO ACTION css 
