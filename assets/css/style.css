@@ -2369,6 +2369,37 @@ p {
 
 /* Better spacing for mobile */
 @media (max-width: 767px) {
+  /* Mobile fixes for the Milwaukee title and layout */
+  .col-lg-6:last-child .section-title .title {
+    font-size: 2.5rem;
+    text-align: center !important;
+    display: flex;
+    flex-direction: column;
+    word-break: break-word;
+    hyphens: auto;
+  }
+  
+  /* Fix for MILWAUKEE 2024 NUMBERS title on mobile */
+  .col-lg-6:last-child .section-title .title span:first-child {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  
+  .col-lg-6:last-child .section-title .title span:last-child {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Center align on mobile devices */
+  .section-title.text-center,
+  .col-lg-6 .section-title.text-center {
+    text-align: center !important;
+  }
+  
+  /* Stats adjustments */
   .stats-details {
     flex-wrap: wrap;
   }
@@ -2398,12 +2429,44 @@ p {
   .stats-main .col-md-6 {
     margin-bottom: 20px;
   }
+}
+
+/* Extra small devices */
+@media (max-width: 575px) {
+  /* Further reduce font size on very small screens */
+  .col-lg-6:last-child .section-title .title {
+    font-size: 2rem;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
   
-  /* Override any other alignment for mobile - KEEP RIGHT ALIGNED */
-  .section-title.text-center,
-  .col-lg-6:last-child .section-title .title,
-  .col-lg-6 .section-title.text-center {
-    text-align: right !important;
+  /* Stack main stats vertically on very small screens */
+  .stats-main {
+    flex-direction: column;
+  }
+  
+  .stats-main .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .big-number {
+    font-size: 2rem;
+  }
+  
+  /* Make the details 2-column even on tiny screens */
+  .stats-details .col {
+    padding: 8px 3px;
+  }
+  
+  .stats-label {
+    font-size: 0.7rem;
+    height: 40px;
+  }
+  
+  .stats-value {
+    font-size: 1rem;
   }
 }
 
@@ -2424,6 +2487,7 @@ p {
 .two-line-label {
   height: 40px;
 }
+
 /*===========================
       4.PRICING css 
 ===========================*/
