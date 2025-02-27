@@ -2052,7 +2052,7 @@ p {
 .milwaukee-stats {
   background: linear-gradient(to bottom, #fff 0%, #f5f7f9 100%);
   border-radius: 12px;
-  padding: 35px;
+  padding: 35px 25px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   margin-top: 30px;
   border-top: 5px solid #37C10E;
@@ -2075,6 +2075,13 @@ p {
 /* Main stats styling */
 .stats-main {
   margin-bottom: 30px !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stats-main .col-md-6 {
+  flex: 0 0 48%;
+  max-width: 48%;
 }
 
 .stats-main h5 {
@@ -2084,15 +2091,19 @@ p {
   letter-spacing: 0.5px;
   color: #333;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .big-number {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   font-weight: 800;
   color: #37C10E;
   line-height: 1.1;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
+  text-align: center;
+  white-space: nowrap;
+  overflow: visible;
 }
 
 .big-number:hover {
@@ -2103,27 +2114,39 @@ p {
 .stats-details {
   display: flex;
   justify-content: space-between;
-  margin: 0 -8px 0 -8px;
+  margin: 0;
   flex-wrap: nowrap;
+  padding: 0;
 }
 
 .stats-details .col {
-  padding: 15px 8px;
+  padding: 15px 5px;
   position: relative;
+  text-align: center;
+  flex: 1;
+  min-width: 0; /* Prevents flex items from overflowing */
 }
 
 .stats-label {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   margin-bottom: 8px;
   color: #555;
   letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: normal;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .stats-value {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #37C10E;
+  white-space: nowrap;
+  overflow: visible;
 }
 
 .stats-title {
@@ -2260,13 +2283,6 @@ p {
     padding-left: 30px;
   }
   
-  .milwaukee-stats {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
   .stats-title {
     flex: 0 0 100%;
     margin-bottom: 40px;
@@ -2276,12 +2292,6 @@ p {
   .stats-number-container {
     flex: 0 0 48%;
     margin-bottom: 25px;
-  }
-  
-  /* Make the stats details more balanced */
-  .stats-details .col {
-    text-align: center;
-    flex: 1;
   }
 }
 
@@ -2307,6 +2317,10 @@ p {
     max-width: 33.333%;
     margin-bottom: 15px;
   }
+  
+  .stats-details .col:nth-child(3n)::after {
+    display: none;
+  }
 }
 
 /* Better spacing for mobile */
@@ -2318,7 +2332,12 @@ p {
   .stats-details .col {
     flex: 0 0 50%;
     max-width: 50%;
+    padding: 10px 5px;
     margin-bottom: 15px;
+  }
+  
+  .stats-details .col:nth-child(even)::after {
+    display: none;
   }
   
   .big-number {
@@ -2345,10 +2364,35 @@ p {
   background-color: rgba(0,0,0,0.1);
 }
 
-@media (max-width: 767px) {
-  .stats-details .col:nth-child(odd)::after {
-    display: none;
+/* Fix for dollar signs and number alignment */
+.milwaukee-stats .big-number,
+.milwaukee-stats .stats-value {
+  position: relative;
+  display: inline-block;
+}
+
+/* Add class for prices to ensure dollar sign is present and formatted correctly */
+.price-value::before {
+  content: '$';
+  display: inline;
+}
+
+/* Ensure the Milwaukee section has proper spacing on the right side */
+@media (min-width: 992px) {
+  .milwaukee-stats {
+    margin-right: 10px;
   }
+}
+
+/* Fix for two-line labels in the small stats */
+.two-line-label {
+  height: 40px;
+}
+
+/* Better spacing for the stats values to prevent cutoff */
+.stats-details .col {
+  padding-left: 2px;
+  padding-right: 2px;
 }
 /*===========================
       4.PRICING css 
