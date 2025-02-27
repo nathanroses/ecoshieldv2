@@ -1985,6 +1985,7 @@ p {
 .services-content .services-icon i {
   font-size: 54px;
   color: #37C10E; }
+
 .services-content .services-content {
   padding-left: 15px; }
   @media (max-width: 767px) {
@@ -2008,45 +2009,71 @@ p {
     color: #121212;
     margin-top: 8px; }
 
+/* New styles for Milwaukee stats section */
+.milwaukee-stats {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  margin-top: 20px;
+}
+
+.stats-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #121212;
+}
+
+.stats-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+.stats-details h6 {
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #121212;
+}
+
+.stats-details p {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #121212;
+}
+
+.stats-charts img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Adjust existing services-image styling for our new layout */
 .services-image {
-  position: absolute;
-  width: 40%;
-  height: 100%;
-  top: 0;
-  right: 0; }
-  @media only screen and (min-width: 992px) and (max-width: 1200px) {
-    .services-image {
-      width: 34%; } }
-  @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .services-image {
-      position: relative;
-      width: 720px;
-      margin: 0 auto; } }
-  @media (max-width: 767px) {
-    .services-image {
-      position: relative;
-      width: 100%;
-      padding-left: 15px;
-      padding-right: 16px;
-      margin: 0 auto; } }
-  @media only screen and (min-width: 576px) and (max-width: 767px) {
-    .services-image {
-      position: relative;
-      width: 540px;
-      margin: 0 auto; } }
-  .services-image .image {
-    max-width: 580px;
-    width: 100%; }
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
-      .services-image .image {
-        margin: 0 auto;
-        padding-top: 50px; } }
-    @media (max-width: 767px) {
-      .services-image .image {
-        margin: 0 auto;
-        padding-top: 50px; } }
-    .services-image .image img {
-      width: 100%; }
+  position: relative;
+  width: 100%;
+  height: auto;
+  top: auto;
+  right: auto;
+}
+
+.services-image .image {
+  max-width: 100%;
+  width: 100%;
+}
+
+.services-image .image img {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .services-content .services-content .services-title,
+  .services-content .services-content .text {
+    text-align: left;
+  }
+}
 
 /*===========================
       4.PRICING css 
