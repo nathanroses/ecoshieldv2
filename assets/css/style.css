@@ -1969,85 +1969,161 @@ p {
       3.SERVICES css 
 ===========================*/
 .services-area {
-  padding-top: 120px;
-  padding: 20px;
-  padding-bottom: 120px;
-  position: relative; }
-  @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .services-area {
-      padding-top: 80px;
-      padding-bottom: 80px; } }
-  @media (max-width: 767px) {
-    .services-area {
-      padding-top: 80px;
-      padding-bottom: 80px; } }
+  padding: 60px 30px;
+  position: relative;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .services-area {
+    padding: 50px 20px;
+  }
+}
+@media (max-width: 767px) {
+  .services-area {
+    padding: 40px 15px;
+  }
+}
 
 .services-content .services-icon i {
   font-size: 54px;
-  color: #37C10E; }
+  color: #37C10E;
+  transition: transform 0.3s ease;
+}
+
+.services-content:hover .services-icon i {
+  transform: scale(1.1);
+}
 
 .services-content .services-content {
-  padding-left: 15px; }
-  @media (max-width: 767px) {
-    .services-content .services-content {
-      padding-left: 0;
-      padding-top: 15px; } }
-  @media only screen and (min-width: 576px) and (max-width: 767px) {
-    .services-content .services-content {
-      padding-left: 15px;
-      padding-top: 0; } }
-  .services-content .services-content .services-title {
-    font-size: 24px;
-    font-weight: 500;
-    text-align: center;
-    line-height: 30px;
-    color: #121212; }
-  .services-content .services-content .text {
-    font-size: 14px;
-    line-height: 20px;
-    text-align: center;
-    color: #121212;
-    margin-top: 8px; }
+  padding-left: 15px;
+}
+@media (max-width: 767px) {
+  .services-content .services-content {
+    padding-left: 0;
+    padding-top: 15px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .services-content .services-content {
+    padding-left: 15px;
+    padding-top: 0;
+  }
+}
 
-/* New styles for Milwaukee stats section */
+.services-content .services-content .services-title {
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.3;
+  color: #121212;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.services-content .services-content .text {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+  color: #555;
+  margin-top: 8px;
+}
+
+/* Enhanced styles for Milwaukee stats section */
 .milwaukee-stats {
-  background-color: #f8f9fa;
-  border-radius: 10px;
-  padding: 25px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  margin-top: 20px;
+  background: linear-gradient(to bottom, #fff 0%, #f5f7f9 100%);
+  border-radius: 12px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  margin-top: 30px;
+  border-top: 5px solid #37C10E;
+  position: relative;
+  overflow: hidden;
+}
+
+.milwaukee-stats::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(55,193,14,0.1) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  z-index: 0;
 }
 
 .stats-title {
-  font-size: 2.2rem;
-  font-weight: bold;
-  line-height: 1.2;
-  color: #121212;
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #111;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.stats-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background-color: #37C10E;
+  border-radius: 2px;
 }
 
 .stats-number {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #333;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #37C10E;
+  margin-top: 15px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.stats-number:hover {
+  transform: translateY(-5px);
+}
+
+.stats-details {
   margin-top: 10px;
+  padding: 20px;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  transition: all 0.3s ease;
+}
+
+.stats-details:hover {
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
 }
 
 .stats-details h6 {
-  font-size: 0.85rem;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #121212;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .stats-details p {
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: #121212;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #222;
+  margin-bottom: 0;
 }
 
 .stats-charts img {
   max-width: 100%;
   height: auto;
+  transition: transform 0.4s ease;
+}
+
+.stats-charts:hover img {
+  transform: scale(1.02);
 }
 
 /* Adjust existing services-image styling for our new layout */
@@ -2057,6 +2133,10 @@ p {
   height: auto;
   top: auto;
   right: auto;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
 }
 
 .services-image .image {
@@ -2066,6 +2146,11 @@ p {
 
 .services-image .image img {
   width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.services-image:hover .image img {
+  transform: scale(1.05);
 }
 
 @media (min-width: 992px) {
@@ -2073,8 +2158,95 @@ p {
   .services-content .services-content .text {
     text-align: left;
   }
+  
+  .milwaukee-stats {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .stats-title {
+    flex: 0 0 100%;
+    margin-bottom: 40px;
+    font-size: 3.5rem;
+  }
+  
+  .stats-number-container {
+    flex: 0 0 48%;
+    margin-bottom: 25px;
+  }
 }
 
+/* Added styling for the Milwaukee section */
+.milwaukee-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.milwaukee-header .made-for {
+  flex: 0 0 40%;
+}
+
+.milwaukee-header .stats-title {
+  flex: 0 0 55%;
+  text-align: right;
+  color: #222;
+  font-size: 3rem;
+  font-weight: 900;
+  position: relative;
+}
+
+.stats-highlight {
+  color: #37C10E;
+  position: relative;
+  display: inline-block;
+}
+
+.stats-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: rgba(55,193,14,0.2);
+  z-index: -1;
+}
+
+/* Animation effects */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stats-animate {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.delay-3 {
+  animation-delay: 0.3s;
+}
+
+.delay-4 {
+  animation-delay: 0.4s;
+}
 /*===========================
       4.PRICING css 
 ===========================*/
