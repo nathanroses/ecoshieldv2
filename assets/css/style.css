@@ -2365,13 +2365,13 @@ p {
   padding-bottom: 80px; }
 
 .uniform-logo {
-    max-height: 80px; 
+    max-height: 240px; 
     width: auto;
     object-fit: contain;
 }
 
 .single-client {
-    height: 120px; 
+    height: 360px; 
     display: flex;
     align-items: center;
     justify-content: center;
