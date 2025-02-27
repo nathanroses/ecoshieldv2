@@ -1965,6 +1965,7 @@ p {
     .header-hero .header-shape img {
       width: 100%; }
 
+
 /*===========================
       3.SERVICES css 
 ===========================*/
@@ -2077,11 +2078,14 @@ p {
   margin-bottom: 30px !important;
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .stats-main .col-md-6 {
   flex: 0 0 48%;
   max-width: 48%;
+  min-width: 0;
+  padding: 0 10px;
 }
 
 .stats-main h5 {
@@ -2092,6 +2096,7 @@ p {
   color: #333;
   text-transform: uppercase;
   text-align: center;
+  width: 100%;
 }
 
 .big-number {
@@ -2104,6 +2109,14 @@ p {
   text-align: center;
   white-space: nowrap;
   overflow: visible;
+  width: 100%;
+  padding: 0 5px;
+}
+
+/* Fix for the cut-off revenue number */
+.stats-main .col-md-6:nth-child(2) .big-number {
+  font-size: 2.3rem; /* Smaller for the revenue number */
+  letter-spacing: -1.5px; /* Tighter spacing */
 }
 
 .big-number:hover {
@@ -2117,6 +2130,7 @@ p {
   margin: 0;
   flex-wrap: nowrap;
   padding: 0;
+  margin-top: 25px;
 }
 
 .stats-details .col {
@@ -2125,6 +2139,8 @@ p {
   text-align: center;
   flex: 1;
   min-width: 0; /* Prevents flex items from overflowing */
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .stats-label {
@@ -2293,6 +2309,10 @@ p {
     flex: 0 0 48%;
     margin-bottom: 25px;
   }
+  
+  .milwaukee-stats {
+    margin-right: 10px;
+  }
 }
 
 /* Medium screen adjustments */
@@ -2349,11 +2369,6 @@ p {
   }
 }
 
-/* Fix the crowding in the stats-details section */
-.stats-details {
-  margin-top: 25px;
-}
-
 .stats-details .col:not(:last-child)::after {
   content: '';
   position: absolute;
@@ -2377,22 +2392,9 @@ p {
   display: inline;
 }
 
-/* Ensure the Milwaukee section has proper spacing on the right side */
-@media (min-width: 992px) {
-  .milwaukee-stats {
-    margin-right: 10px;
-  }
-}
-
 /* Fix for two-line labels in the small stats */
 .two-line-label {
   height: 40px;
-}
-
-/* Better spacing for the stats values to prevent cutoff */
-.stats-details .col {
-  padding-left: 2px;
-  padding-right: 2px;
 }
 /*===========================
       4.PRICING css 
